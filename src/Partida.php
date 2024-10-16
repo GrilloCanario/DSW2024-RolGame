@@ -30,10 +30,9 @@ class Partida
     }
   }
 
-  public function Lucha()
-  {
-
+  public function eliminarMuertos() : void {
+   $this->personajes = array_filter($this->personajes, function($p) {
+    return $p->puntosDeVida > 0;
+   }); 
   }
-
-  
 }
